@@ -12,8 +12,19 @@ class App extends Component {
       googleMapsPromise
       ])
       .then(values => {
+        
         console.log(values);
+
+        // Google Maps data
+        let google = values[0];
+
+        this.google = google;
+        this.map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 9,
+          scrollwheel: true,
+          center: { lat: 54.306824, lng: 10.125558 }
       })
+    })
   }
 
   render() {
