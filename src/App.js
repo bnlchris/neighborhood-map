@@ -20,7 +20,7 @@ class App extends Component {
 
         this.google = google;
         this.map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 9,
+          zoom: 14,
           scrollwheel: true,
           center: { lat: 54.306824, lng: 10.125558 }
       })
@@ -32,7 +32,7 @@ class App extends Component {
       <div className="App">
         
         <header>
-          <p>Culinary Kiel</p>
+          <h1>Culinary Kiel</h1>
         </header>
 
         <div id='map'>
