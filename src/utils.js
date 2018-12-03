@@ -11,8 +11,7 @@ export function loadGoogleMaps() {
 
 		// Load Google Maps API
 		const script = document.createElement('script');
-		const APIKey = 'AIzaSyCxZQ-z1otgbq-sDzm1ASKQ5TTdquwXu34';
-		script.src = 'https://maps.googleapis.com/maps/api/js?key=${API}&callback=resolveGoogleMapsPromise';
+		script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCxZQ-z1otgbq-sDzm1ASKQ5TTdquwXu34&callback=resolveGoogleMapsPromise';
 		// Make sure, API is loaded asynchronously
 		script.async = true;
 		document.body.appendChild(script);
