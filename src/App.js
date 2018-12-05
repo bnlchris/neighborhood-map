@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
-import { loadGoogleMaps } from './utils.js';
+import { loadGoogleMaps, loadFoursquarePlaces } from './utils.js';
 
 class App extends Component {
   
   // load Google Maps
   componentDidMount() {
     let googleMapsPromise = loadGoogleMaps();
+    let foursquarePromise = loadFoursquarePlaces();
     
     Promise.all([
-      googleMapsPromise
+      googleMapsPromise,
+      foursquarePromise
       ])
       .then(values => {
         
