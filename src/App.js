@@ -22,11 +22,27 @@ class App extends Component {
 
         this.google = google;
         this.map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 14,
+          zoom: 12,
           scrollwheel: true,
           center: { lat: 54.306824, lng: 10.125558 }
       })
+
+        // load markers
+        let venues = values[1].response.venues;
+
+        venues.forEach(venue => {
+          let marker = new google.maps.Marker({
+            position: { lat: venue.location.lat, lng: venue.location.lng },
+            map: this.map,
+            venue: venue,
+            id: venue.id,
+            name: venue.name,
+            animation: google.maps.Animation.DROP
+          });
+        })
+
     })
+
   }
 
   render() {
