@@ -21,6 +21,6 @@ export function loadGoogleMaps() {
 // function to load places from Foursquare
 export function loadFoursquarePlaces() {
 	// use API
-	const foursquareAPI = 'https://api.foursquare.com/v2/venues/search?client_id=E5CSHAOVG3VNBQFQBSZ0NS44BNEYP3ANKMUUK3LF4YF3ACO0&client_secret=RZG114RYPZYH0CQBBU1CHFPEDIG0N0J4S0PBJFW4VCYPBIRI&limit=10&near=Kiel&querypizza&v=20181206';
+	const foursquareAPI = 'https://api.foursquare.com/v2/venues/search?client_id=E5CSHAOVG3VNBQFQBSZ0NS44BNEYP3ANKMUUK3LF4YF3ACO0&client_secret=RZG114RYPZYH0CQBBU1CHFPEDIG0N0J4S0PBJFW4VCYPBIRI&limit=50&near=Kiel&query=restaurant&v=20181206';
 	return fetch(foursquareAPI).then(resp => resp.json())
 }
