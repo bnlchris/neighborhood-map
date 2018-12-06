@@ -23,4 +23,20 @@ header {
   z-index: 100;
   background: HoneyDew;
   top: 0;
+  overflow-y: scroll;
+}
+
+.searchField {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 25px;
+  border: 1px solid DarkGreen;
+}
+
+.listOfPlaces {
+  border: 1px solid DarkGreen;
+  border-radius: 25px;
+  padding: 5px;
+  background-color: Gold;
+  margin-bottom: 5px;
 }
