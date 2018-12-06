@@ -50,7 +50,7 @@ class App extends Component {
             animation: google.maps.Animation.DROP
           });
           // push each marker to list of markers
-          this.markers.push(this.markers);
+          this.markers.push(marker);
         })
 
     })
@@ -59,7 +59,15 @@ class App extends Component {
 
   //method to filter my venue in the input field
   filterVenues(query) {
-    console.log(query)
+    
+    this.markers.forEach(marker => {
+      if (marker.name.toLowerCase().includes(query.toLowerCase())) {
+        marker.setVisible(true);
+      } else {
+        marker.setVisible(false);
+      }
+    })
+
     this.setState({query});
   }
 
