@@ -29,6 +29,8 @@ class App extends Component {
 
         // load markers
         let venues = values[1].response.venues;
+        // list of markers
+        this.markers = [];
 
         venues.forEach(venue => {
           let marker = new google.maps.Marker({
@@ -39,6 +41,7 @@ class App extends Component {
             name: venue.name,
             animation: google.maps.Animation.DROP
           });
+          this.markers.push(this.markers);
         })
 
     })
