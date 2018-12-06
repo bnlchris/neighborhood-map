@@ -29,7 +29,7 @@ class App extends Component {
 
         // load markers
         let venues = values[1].response.venues;
-        // list of markers
+        // list of markers (to map over them)
         this.markers = [];
 
         venues.forEach(venue => {
@@ -41,6 +41,7 @@ class App extends Component {
             name: venue.name,
             animation: google.maps.Animation.DROP
           });
+          // push each marker to list of markers
           this.markers.push(this.markers);
         })
 
@@ -57,6 +58,10 @@ class App extends Component {
         </header>
 
         <div id='map'>
+
+        </div>
+
+        <div id='sidebar'>
 
         </div>
         
