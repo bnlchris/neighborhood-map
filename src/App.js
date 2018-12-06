@@ -57,10 +57,16 @@ class App extends Component {
           if (marker.getAnimation() !== null) {
             marker.setAnimation(null);
           } else { marker.setAnimation(google.maps.Animation.BOUNCE);
-          } setTimeout(() => { marker.setAnimation(null) }, 1500);
+          } setTimeout(() => { marker.setAnimation(null) }, 2000);
         });
 
-          // Create infowindow for selected marker 
+          // Create infowindow for selected marker
+          google.maps.event.addListener(marker, 'click', () => {
+            this.infowindow.setContent(marker.name);
+            this.map.setCenter(marker.position);
+            this.infowindow.open(this.map, marker);
+            this.map.panBy(0, -125);
+          })
 
           // push each marker to list of markers
           this.markers.push(marker);
