@@ -72,6 +72,7 @@ class App extends Component {
           this.markers.push(marker);
         })
 
+        this.setState({venues});
     })
 
   }
@@ -103,7 +104,14 @@ class App extends Component {
         </div>
 
         <div id='sidebar'>
-          <input value={this.state.query} onChange={(event) => {this.filterVenues(event.target.value)}}/>
+          <input className='searchField' value={this.state.query} onChange={(event) => {this.filterVenues(event.target.value)}}/>
+          {
+            this.state.venues && this.state.venues.length > 0 && this.state.venues.map((venue, index) => (
+              <div className='listOfPlaces'>
+                {venue.name}
+              </div>
+            ))
+          }
         </div>
         
       </div>
