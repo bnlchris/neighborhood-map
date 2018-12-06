@@ -30,13 +30,13 @@ header {
   margin-top: 15px;
   margin-bottom: 15px;
   border-radius: 25px;
-  border: 1px solid DarkGreen;
+  border: 2px solid DarkGreen;
 }
 
 .listOfPlaces {
-  border: 1px solid DarkGreen;
+  border: 2px solid DarkGreen;
   border-radius: 25px;
   padding: 5px;
-  background-color: Gold;
+  background-color: Khaki;
   margin-bottom: 5px;
 }
