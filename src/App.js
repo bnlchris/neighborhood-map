@@ -39,6 +39,8 @@ class App extends Component {
         let venues = values[1].response.venues;
         // list of markers (to map over them)
         this.markers = [];
+        // variable for infowindow
+        this.infowindow = new google.maps.InfoWindow();
 
         venues.forEach(venue => {
           let marker = new google.maps.Marker({
@@ -49,6 +51,17 @@ class App extends Component {
             name: venue.name,
             animation: google.maps.Animation.DROP
           });
+
+          // Set animation for selected marker
+          marker.addListener('click', () => {
+          if (marker.getAnimation() !== null) {
+            marker.setAnimation(null);
+          } else { marker.setAnimation(google.maps.Animation.BOUNCE);
+          } setTimeout(() => { marker.setAnimation(null) }, 1500);
+        });
+
+          // Create infowindow for selected marker 
+
           // push each marker to list of markers
           this.markers.push(marker);
         })
