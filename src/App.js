@@ -4,6 +4,14 @@ import { loadGoogleMaps, loadFoursquarePlaces } from './utils.js';
 
 class App extends Component {
   
+  // constructor to set state
+  constructor(props) {
+    super(props);
+    this.state = {
+      query: ''
+    }
+  }
+
   // load Google Maps
   componentDidMount() {
     let googleMapsPromise = loadGoogleMaps();
@@ -49,6 +57,12 @@ class App extends Component {
 
   }
 
+  //method to filter my venue in the input field
+  filterVenues(query) {
+    console.log(query)
+    this.setState({query});
+  }
+
   render() {
     return (
       <div className="App">
@@ -62,7 +76,7 @@ class App extends Component {
         </div>
 
         <div id='sidebar'>
-
+          <input value={this.state.query} onChange={(event) => {this.filterVenues(event.target.value)}}/>
         </div>
         
       </div>
