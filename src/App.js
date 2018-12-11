@@ -107,7 +107,7 @@ class App extends Component {
           <input className='searchField' value={this.state.query} onChange={(event) => {this.filterVenues(event.target.value)}}/>
           {
             this.state.venues && this.state.venues.length > 0 && this.state.venues.map((venue, index) => (
-              <div className='listOfPlaces'>
+              <div key={index} className='listOfPlaces'>
                 {venue.name}
               </div>
             ))
