@@ -36,13 +36,13 @@ class App extends Component {
       })
 
         // load markers
-        let venues = values[1].response.venues;
+        this.venues = values[1].response.venues;
         // list of markers (to map over them)
         this.markers = [];
         // variable for infowindow
         this.infowindow = new google.maps.InfoWindow();
 
-        venues.forEach(venue => {
+        this.venues.forEach(venue => {
           let marker = new google.maps.Marker({
             position: { lat: venue.location.lat, lng: venue.location.lng },
             map: this.map,
@@ -72,14 +72,18 @@ class App extends Component {
           this.markers.push(marker);
         })
 
-        this.setState({venues});
+        this.setState({filteredListOfVenues: this.venues});
     })
 
   }
 
   //method to filter my venue in the input field
   filterVenues(query) {
+
+    // show only places in the list that match the query in the input field
+    let filteredQuery = this.venues.filter(venue => venue.name.toLowerCase().includes(query.toLowerCase()));
     
+    // show only markers for filtered places
     this.markers.forEach(marker => {
       if (marker.name.toLowerCase().includes(query.toLowerCase())) {
         marker.setVisible(true);
@@ -88,7 +92,7 @@ class App extends Component {
       }
     })
 
-    this.setState({query});
+    this.setState({filteredListOfVenues: filteredQuery, query});
   }
 
   render() {
@@ -104,9 +108,9 @@ class App extends Component {
         </div>
 
         <div id='sidebar'>
-          <input className='searchField' value={this.state.query} onChange={(event) => {this.filterVenues(event.target.value)}}/>
+          <input className='searchField' placeholder='Filter by name' value={this.state.query} onChange={(event) => {this.filterVenues(event.target.value)}}/>
           {
-            this.state.venues && this.state.venues.length > 0 && this.state.venues.map((venue, index) => (
+            this.state.filteredListOfVenues && this.state.filteredListOfVenues.length > 0 && this.state.filteredListOfVenues.map((venue, index) => (
               <div key={index} className='listOfPlaces'>
                 {venue.name}
               </div>
