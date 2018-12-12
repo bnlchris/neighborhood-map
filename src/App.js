@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { loadGoogleMaps, loadFoursquarePlaces } from './utils.js';
+import Sidebar from './components/Sidebar';
 
 class App extends Component {
   
@@ -78,7 +79,7 @@ class App extends Component {
   }
 
   // method to filter my venue in the input field
-  filterVenues(query) {
+  filterVenues = (query) => {
 
     // show only places in the list that match the query in the input field
     let filteredQuery = this.venues.filter(venue => venue.name.toLowerCase().includes(query.toLowerCase()));
@@ -117,20 +118,13 @@ class App extends Component {
           <h1>Culinary Kiel</h1>
         </header>
 
-        <div id='map'>
+        <div id='map'></div>
 
-        </div>
-
-        <div id='sidebar'>
-          <input className='searchField' placeholder='Filter by name' value={this.state.query} onChange={(event) => {this.filterVenues(event.target.value)}}/>
-          {
-            this.state.filteredListOfVenues && this.state.filteredListOfVenues.length > 0 && this.state.filteredListOfVenues.map((venue, index) => (
-              <div key={index} className='listOfPlaces' onClick={() => {this.showMarker(venue)}}>
-                {venue.name}
-              </div>
-            ))
-          }
-        </div>
+        <Sidebar
+          filterVenues={this.filterVenues}
+          filteredListOfVenues={this.state.filteredListOfVenues}
+          showMarker={this.showMarker}
+        />
         
       </div>
     );
