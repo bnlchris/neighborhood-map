@@ -102,6 +102,11 @@ class App extends Component {
     this.map.setCenter(marker.position);
     this.infowindow.open(this.map, marker);
     this.map.panBy(0, -125);
+    // make marker bounce
+    if (marker.getAnimation() !== null) {
+        marker.setAnimation(null);
+    } else { marker.setAnimation(this.google.maps.Animation.BOUNCE);
+      } setTimeout(() => { marker.setAnimation(null) }, 2000);
   }
 
   render() {
