@@ -77,7 +77,7 @@ class App extends Component {
 
   }
 
-  //method to filter my venue in the input field
+  // method to filter my venue in the input field
   filterVenues(query) {
 
     // show only places in the list that match the query in the input field
@@ -93,6 +93,15 @@ class App extends Component {
     })
 
     this.setState({filteredListOfVenues: filteredQuery, query});
+  }
+
+  // method to animate marker when item on list is clicked
+  showMarker = (venue) => {
+    let marker = this.markers.filter(m => m.id === venue.id)[0];
+    this.infowindow.setContent(marker.name);
+    this.map.setCenter(marker.position);
+    this.infowindow.open(this.map, marker);
+    this.map.panBy(0, -125);
   }
 
   render() {
@@ -111,7 +120,7 @@ class App extends Component {
           <input className='searchField' placeholder='Filter by name' value={this.state.query} onChange={(event) => {this.filterVenues(event.target.value)}}/>
           {
             this.state.filteredListOfVenues && this.state.filteredListOfVenues.length > 0 && this.state.filteredListOfVenues.map((venue, index) => (
-              <div key={index} className='listOfPlaces'>
+              <div key={index} className='listOfPlaces' onClick={() => {this.showMarker(venue)}}>
                 {venue.name}
               </div>
             ))
