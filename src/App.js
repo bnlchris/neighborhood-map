@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { loadGoogleMaps, loadFoursquarePlaces } from './utils.js';
+import { loadGoogleMaps, loadFoursquarePlaces} from './utils.js';
 import Sidebar from './components/Sidebar';
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
     }
   }
 
-  // load Google Maps
+  // load data from Google Maps and Foursquare
   componentDidMount() {
     let googleMapsPromise = loadGoogleMaps();
     let foursquarePromise = loadFoursquarePlaces();
@@ -62,8 +62,14 @@ class App extends Component {
         });
 
           // Create infowindow for selected marker
+          let restaurantInfos =
+            '<div class="info_box">' +
+            '<h4>' + venue.name + '</h4>' +
+            '<p>' + venue.location.formattedAddress + '</p>' + 
+            '</div>';
+
           google.maps.event.addListener(marker, 'click', () => {
-            this.infowindow.setContent(marker.name);
+            this.infowindow.setContent(restaurantInfos);
             this.map.setCenter(marker.position);
             this.infowindow.open(this.map, marker);
             this.map.panBy(0, -125);
