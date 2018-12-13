@@ -3,6 +3,9 @@
 }
 
 header {
+  position: relative;
+  z-index: 100;
+  top: 0;
   background-color: DarkGreen;
   color: white;
   display: flex;
