@@ -12,7 +12,8 @@ self.addEventListener('install', function(event) {
 
 // Array for files to be cached
 let urlsToCache = [
-    '/'
+    '/',
+    'index.html'
 ];
 
 // Service Worker should return requests with cache, otherwise fetch data from network
