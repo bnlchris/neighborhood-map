@@ -9,4 +9,4 @@ import startServiceWorker from './startServiceWorker';
 ReactDOM.render(<App />, document.getElementById('root'));
 
 // Start Service Worker when page is online
-startServiceWorker();
+// startServiceWorker();
