@@ -125,7 +125,7 @@ class App extends Component {
           hideSidebar={this.hideSidebar}
         />
 
-        <div id='map' aria-label='Google Map'></div>
+        <div id='map' aria-label='Google Map' role='application'></div>
 
         <Sidebar
           filterVenues={this.filterVenues}
