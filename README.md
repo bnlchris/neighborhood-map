@@ -14,6 +14,8 @@ The easiest way is to clone the project to your local machine.
 
 Type `git clone` plus [https://github.com/bnlchris/neighborhood-map.git](https://github.com/bnlchris/neighborhood-map.git) to your command line.
 
+Run `npm install`.
+
 Then, add `npm start`. Your browser will open a new tab on [http://localhost:3000/](http://localhost:3000/) where you can try out the app.
 
 ## Offline use
