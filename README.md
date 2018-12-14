@@ -1,44 +1,31 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Culinary Kiel
 
-In the project directory, you can run:
+This project ist the final one to complete [Udacity's Front-End Nanodegree](https://eu.udacity.com/course/front-end-web-developer-nanodegree--nd001). Using the React framework, Google Maps is used via it's API to show a bunch of restaurants in the region around Kiel, Germany.
 
-### `npm start`
+The data about the respective restaurants is fetched via the Foursquare API.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Users are able to search for restaurants by typing a name into the input field in the sidebar. Alternatively, it is possible to click on the markers on the map in order to get the name and address of the places.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## How to run the application
 
-### `npm test`
+The easiest way is to clone the project to your local machine.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Type `git clone` plus [https://github.com/bnlchris/neighborhood-map.git](https://github.com/bnlchris/neighborhood-map.git) to your command line.
 
-### `npm run build`
+Then, add `npm start`. Your browser will open a new tab on [http://localhost:3000/](http://localhost:3000/) where you can try out the app.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Offline use
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+Because this project is in production mode only it will not load any data into the cache.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+However, the Service Worker is registered in [https://github.com/bnlchris/neighborhood-map/blob/master/src/index.js](https://github.com/bnlchris/neighborhood-map/blob/master/src/index.js).
 
-### `npm run eject`
+## Ressources
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Other Udacity students provided a lot of links with helpful information, for example this [video tutorial](https://www.youtube.com/watch?v=LvQe7xrUh7I&index=6&list=PLKC17wty6rS1XVZbRlWjYU0WVsIoJyO3s&t=0s).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Thank you
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Thank you very much to Udacity and Google for this inspiring opportunity!
