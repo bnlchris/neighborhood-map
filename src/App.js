@@ -121,9 +121,11 @@ class App extends Component {
     return (
       <div className="App">
         
-        <Header/>
+        <Header
+          hideSidebar={this.hideSidebar}
+        />
 
-        <div id='map'></div>
+        <div id='map' aria-label='Google Map'></div>
 
         <Sidebar
           filterVenues={this.filterVenues}
