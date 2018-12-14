@@ -20,13 +20,13 @@ header {
 
 #sidebar {
   position: absolute;
-  width: 300px;
+  width: 250px;
   height: 100vh;
   max-width: 100%;
-  z-index: 100;
   background: HoneyDew;
   top: 0;
   overflow-y: scroll;
+  padding-top: 85px;
 }
 
 .searchField {
@@ -38,7 +38,6 @@ header {
 
 .listOfPlaces {
   border: 2px solid DarkGreen;
-  border-radius: 25px;
   padding: 5px;
   background-color: Khaki;
   margin-bottom: 5px;
