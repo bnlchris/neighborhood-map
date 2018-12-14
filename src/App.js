@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { loadGoogleMaps, loadFoursquarePlaces} from './utils.js';
 import Sidebar from './components/Sidebar';
+import Header from './components/Header';
 
 class App extends Component {
   
@@ -120,9 +121,7 @@ class App extends Component {
     return (
       <div className="App">
         
-        <header>
-          <h1>Culinary Kiel</h1>
-        </header>
+        <Header/>
 
         <div id='map'></div>
 
