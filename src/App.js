@@ -121,9 +121,7 @@ class App extends Component {
     return (
       <div className="App">
         
-        <Header
-          hideSidebar={this.hideSidebar}
-        />
+        <Header/>
 
         <div id='map' aria-label='Google Map' role='application'></div>
 
